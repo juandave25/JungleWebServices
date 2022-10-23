@@ -34,9 +34,9 @@ class TablaProyectos
             
 
                 $sub_array = array();
+                $sub_array[] = ucwords($proyecto[$i]["codigo"]);
                 $sub_array[] = ucwords($proyecto[$i]["nombre"]);
                 $sub_array[] = ucwords($proyecto[$i]["descripcion"]);
-                $sub_array[] = ucwords($proyecto[$i]["codigo"]);
                 $sub_array[] = $proyecto[$i]["precio"];
                 $sub_array[] = $estado;
                 $sub_array[] = $acciones;

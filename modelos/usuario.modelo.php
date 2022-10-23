@@ -9,7 +9,6 @@ class ModeloUsuario{
             $stmt = Conexion::conectar()->prepare("SELECT personas.perDni as dni, personas.perNombres as nombres, personas.perApellidos as apellidos, usuarios.usuPerfil as perfil, usuarios.usuEstado as estado FROM personas INNER JOIN usuarios WHERE personas.perDni = usuarios.usuLogin");
             $stmt->execute();
             return $stmt->fetchAll();
-            $stmt->close();
             $stmt = null;
     }
 
@@ -32,7 +31,6 @@ class ModeloUsuario{
 
         }
 
-        $stmt->close();
         $stmt = null;
     }
 
@@ -49,7 +47,6 @@ class ModeloUsuario{
             }
             return $stmt->fetch();
     
-            $stmt->close();
             $stmt = null;
 
     }
@@ -71,7 +68,6 @@ class ModeloUsuario{
 
         }
 
-        $stmt->close();
         $stmt = null;
 
 
@@ -91,7 +87,6 @@ class ModeloUsuario{
             }
             return "ok";
     
-            $stmt->close();
             $stmt = null;
 
     }

@@ -28,7 +28,8 @@ if (isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"
     
         if ($_GET["ruta"] == "menu" ||
             $_GET["ruta"] == "clientes" ||
-            $_GET["ruta"] == "usuarios" ||            
+            $_GET["ruta"] == "usuarios" ||       
+            $_GET["ruta"] == "proyectos" ||     
             $_GET["ruta"] == "salir") {
             include "modulos/" . $_GET["ruta"] . ".php";
 
@@ -53,6 +54,8 @@ if (isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"
 <script src="vistas/plugins/datatables/jquery-3.5.1.js"></script>
 <script src="vistas/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="vistas/js/app.js"></script>
+<script src="vistas/js/cliente.js"></script>
+<script src="vistas/js/proyecto.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="vistas/plugins/sweet_alert2/sweetalert2.all.min.js"></script>

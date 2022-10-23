@@ -32,6 +32,14 @@ class ControladorUsuarios {
 
     }
 
+    public static function ctrActualizarUsuarios($valor){
+        $tabla = 'usuarios';
+        
+        $respuesta = ModeloUsuario::mdlActualizarUsuario($tabla, $valor);
+
+        return $respuesta;  
+    }
+
     public static function ctrActualizarEstadoUsuario($valor, $estadoU){
         
         $tabla = 'usuarios';

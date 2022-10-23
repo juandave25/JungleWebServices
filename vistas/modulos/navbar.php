@@ -18,6 +18,9 @@
             <a class="nav-link" href="usuarios">Usuarios</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="proyectos">Proyectos</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="salir">Cerrar sesión</a>
           </li>
         </ul>

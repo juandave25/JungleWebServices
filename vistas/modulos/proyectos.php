@@ -15,8 +15,6 @@
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>
-                <th>Servicios</th>
-                <th>Integrantes</th>
                 <th>Estado</th>
                 <th>Acciones</th>
             </tr>

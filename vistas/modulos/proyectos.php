@@ -12,6 +12,7 @@
     <table class="table" id="tablaProyectos" style="width:100%">
         <thead>
             <tr>
+                <th>Código</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>
@@ -27,17 +28,17 @@
 
 
 <!-- MODAL INGRESO PROYECTO -->
-<div class="modal fade" id="mdlNuevoCliente" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="mdlNuevoProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-secondary text-white">
-        <h5 class="modal-title" id="staticBackdropLabel">Nuevo Cliente</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Nuevo Proyecto</h5>
         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
       <div class="modal-body bg-light">
         
-      <form class="row g-3 needs-validation" id="frmNuevoCliente" novalidate>
+      <form class="row g-3 needs-validation" id="frmNuevoProyecto" novalidate>
         
       <div class="col-md-6">
             <input type="hidden" id="id" name="id">
@@ -84,12 +85,12 @@
         </div>
 
         <div class="col-md-12">
-            <input type="text" name="cliOp" id="cliOp" hidden>
+            <input type="text" name="proOp" id="proOp" hidden>
         </div>
         
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-dark" id="btnGuardarCliente">Guardar</button>
+        <button type="submit" class="btn btn-dark" id="btnGuardarProyecto">Guardar</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
       </div>
       </form>  
@@ -101,19 +102,18 @@
 
 <!-- MOSTRAR VER PROYECTO -->
 
-<div class="modal fade" id="mdlVerCliente" tabindex="-1" aria-labelledby="ModalLabelCliente" aria-hidden="true">
+<div class="modal fade" id="mdlVerProyecto" tabindex="-1" aria-labelledby="ModalLabelProyecto" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-secondary text-white">
-        <h5 class="modal-title" id="ModalLabelCliente">Información del Cliente</h5>
+        <h5 class="modal-title" id="ModalLabelProyecto">Información del Proyecto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center m-3">
-          
-          <h4 id="cliNit"></h4>
-          <h5 id="cliNombre"></h5>
+          <h4 id="proCodigo"></h5>
+          <h5 id="proNombre"></h5>
           <hr>
-          <h5 id="cliRazonSocial"></h5>
+          <h5 id="proDescripcion"></h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

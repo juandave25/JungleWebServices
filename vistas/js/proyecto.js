@@ -6,10 +6,6 @@ $(document).ready(function () {
     urlProyectos = "Ajax/tablaProyectos.ajax.php";
     CrearTablas(nombreProyectos, urlProyectos);
 
-    nombreProyectosDetalle = "#tablaProyectosDetalle";
-    urlProyectosDetalle = "Ajax/tablaProyectosDetalle.ajax.php";
-    CrearTablas(nombreProyectosDetalle, urlProyectosDetalle);
-
     function CrearTablas(nombre, url) {
 
         $(nombre).DataTable({
@@ -54,9 +50,9 @@ function abrirModalNuevoProyecto() {
 
     const btnGuardar = document.getElementById('btnGuardarProyecto');
     const labelProyecto = document.getElementById('staticBackdropLabel');
-    const cliOp = document.getElementById('cliOp');
+    const proOp = document.getElementById('proOp');
     labelProyecto.innerText = 'Nuevo Proyecto';
-    cliOp.value = "0";
+    proOp.value = "0";
     btnGuardar.innerText = "Guardar";
 
     const myModal = new bootstrap.Modal('#mdlNuevoProyecto', {
@@ -72,13 +68,13 @@ function editarProyecto(id) {
 
     const btnGuardar = document.getElementById('btnGuardarProyecto');
     const labelProyecto = document.getElementById('staticBackdropLabel');
-    const cliPro = document.getElementById('cliPro');
+    const proOp = document.getElementById('proOp');
     labelProyecto.innerText = 'Editar Proyecto';
-    cliPro.value = "1";
+    proOp.value = "1";
     btnGuardar.innerText = 'Actualizar';
 
     const data = new FormData();
-    data.append('cliProId', id);
+    data.append('proId', id);
     const url = 'Ajax/proyectos.ajax.php';
     const http = new XMLHttpRequest();
     http.open("POST", url, true);
@@ -108,13 +104,15 @@ function editarProyecto(id) {
     const modalNuevoProyecto = document.getElementById('mdlNuevoProyecto');
     myModal.show(modalNuevoProyecto);
 
-
+    let nombreProyectosDetalle = "#tablaProyectosDetalle";
+    let urlProyectosDetalle = `Ajax/tablaProyectosDetalle.ajax.php&proId=${id}`;
+    CrearTablas(nombreProyectosDetalle, urlProyectosDetalle);
 
 }
 
 // GUARDAR Y ACTUALIZAR DATOS DE Proyecto
-const btnGuardarCli = document.getElementById('frmNuevoProyecto');
-btnGuardarCli?.addEventListener('submit', function (e) {
+const btnGuardarProyecto = document.getElementById('frmNuevoProyecto');
+btnGuardarProyecto?.addEventListener('submit', function (e) {
     e.preventDefault();
     if (validarCampos()) {
         let form = document.querySelector('form');
@@ -139,7 +137,7 @@ btnGuardarCli?.addEventListener('submit', function (e) {
 // CAMBIAR ESTADO DE Proyecto
 function estadoProyecto(id) {
     const data = new FormData();
-    data.append('cliEstado', id);
+    data.append('proEstado', id);
     const url = 'ajax/proyectos.ajax.php';
     enviarDatosPost(data, url);
     setTimeout(() => {
@@ -151,7 +149,7 @@ function estadoProyecto(id) {
 
 function verProyecto(id) {
     const data = new FormData();
-    data.append('cliProId', id);
+    data.append('proId', id);
     const url = 'ajax/proyectos.ajax.php';
     const http = new XMLHttpRequest();
     http.open("POST", url, true);
@@ -160,13 +158,13 @@ function verProyecto(id) {
 
         if (this.readyState == 4 && this.status == 200) {
             let res = JSON.parse(this.responseText);
-            let nombre = res.cliNombre;
-            let razonSocial = res.cliRazonSocial;
-            let nit = res.cliNit;
+            let nombre = res.proNombre;
+            let descripcion = res.proDescripcion;
+            let codigo = res.proCodigo;
 
-            document.getElementById('cliNombre').innerText = nombre.toUpperCase();
-            document.getElementById('cliRazonSocial').innerText = razonSocial.toUpperCase();
-            document.getElementById('cliNit').innerText = nit;
+            document.getElementById('proNombre').innerText = nombre.toUpperCase();
+            document.getElementById('proDescripcion').innerText = descripcion;
+            document.getElementById('proCodigo').innerText = codigo;
         }
     }
     const myModal = new bootstrap.Modal('#mdlVerProyecto', {

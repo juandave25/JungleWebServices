@@ -13,7 +13,7 @@ class AjaxProyectos
             "codigo"           => $this->codigo,
             "nombre"   => $this->nombre,
             "descripcion"     => $this->descripcion,
-            "precio"     => $this->descripcion,
+            "precio"     => $this->precio,
             "integrantes" => $this->integrantes
         );
 
@@ -38,7 +38,7 @@ class AjaxProyectos
             "id" => $this->id,
             "nombre"   => $this->nombre,
             "descripcion"     => $this->descripcion,
-            "precio"     => $this->descripcion,
+            "precio"     => $this->precio,
         );
 
         $respuesta = ControladorProyectos::ctrActualizarProyecto($datos);
@@ -112,7 +112,7 @@ if (isset($_POST["proOp"])) {
         $proyecto->nombre           = $_POST["nombre"];
         $proyecto->precio           = $_POST["precio"];
         $proyecto->descripcion       = strtolower($_POST["descripcion"]);
-        $proyecto->codigo     = strtolower($_POST["codigo"]);
+        $proyecto->codigo     =  $_POST["codigo"];
         $proyecto->integrantes =$_POST["integrantes"];
 
         $proyecto->ajaxGuardarProyecto();
@@ -123,7 +123,7 @@ if (isset($_POST["proOp"])) {
         $proyecto->id  = $_POST["id"];
         $proyecto->precio           = $_POST["precio"];
         $proyecto->descripcion       = strtolower($_POST["descripcion"]);
-        $proyecto->codigo     = strtolower($_POST["codigo"]);
+        $proyecto->codigo     = $_POST["codigo"];
         $proyecto->integrantes = $_POST["integrantes"];
 
         $proyecto->ajaxActualizarProyecto();

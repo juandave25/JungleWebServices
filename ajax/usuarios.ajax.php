@@ -180,8 +180,3 @@ if (isset($_POST["usuDni"])) {
     $usuario->usuario   = $_POST["usuDni"];
     $usuario->ajaxBuscarUsuario();
 }
-
-
-
-
-?>

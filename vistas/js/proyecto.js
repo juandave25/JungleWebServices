@@ -83,17 +83,18 @@ function editarProyecto(id) {
 
         if (this.readyState == 4 && this.status == 200) {
             let res = JSON.parse(this.responseText);
-            // console.log(res);
 
-            let nombre = res.cliNombre;
-            let razonSocial = res.cliRazonSocial;
-            let nit = res.cliNit;
-            let id = res.cliId;
+            let id = res.proId;
+            let codigo = res.proCodigo;
+            let nombre = res.proNombre;
+            let descripcion = res.proDescripcion;
+            let precio = res.proPrecio;
 
-            document.getElementById('nombre').value = nombre.toUpperCase();
-            document.getElementById('razonSocial').value = razonSocial.toUpperCase();
-            document.getElementById('nit').value = nit;
+            document.getElementById('codigo').value = codigo.toUpperCase();
+            document.getElementById('nombre').value = nombre;
             document.getElementById('id').value = id;
+            document.getElementById('precio').value = precio;
+            document.getElementById('descripcion').value = descripcion;
 
         }
     }
@@ -106,7 +107,7 @@ function editarProyecto(id) {
 
     let nombreProyectosDetalle = "#tablaProyectosDetalle";
     let urlProyectosDetalle = `Ajax/tablaProyectosDetalle.ajax.php&proId=${id}`;
-    CrearTablas(nombreProyectosDetalle, urlProyectosDetalle);
+    //CrearTablas(nombreProyectosDetalle, urlProyectosDetalle);
 
 }
 
@@ -181,19 +182,19 @@ function validarCampos() {
 
     let correcto = true;
 
-    if (document.getElementById('nit').value.length <= 2 || document.getElementById('nit').value.length >= 10) {
-        correcto = false;
-    }
+    // if (document.getElementById('nit').value.length <= 2 || document.getElementById('nit').value.length >= 10) {
+    //     correcto = false;
+    // }
 
-    if (document.getElementById('nombre').value.length <= 2) {
-        correcto = false;
-    }
+    // if (document.getElementById('nombre').value.length <= 2) {
+    //     correcto = false;
+    // }
 
-    if (document.getElementById('razonSocial').value.length <= 2) {
-        correcto = false;
-    }
+    // if (document.getElementById('razonSocial').value.length <= 2) {
+    //     correcto = false;
+    // }
 
-    return correcto;
+    return correcto; 
 
 }
 

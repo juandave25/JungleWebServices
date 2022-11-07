@@ -26,7 +26,6 @@ class ModeloPersona
         }
         return "ok";
 
-        $stmt->close();
         $stmt = null;
     
     }
@@ -53,7 +52,6 @@ class ModeloPersona
         }
         return "ok";
 
-        $stmt->close();
         $stmt = null;
     
     }

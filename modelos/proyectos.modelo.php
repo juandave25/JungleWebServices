@@ -42,7 +42,9 @@ class ModeloProyecto
 
             $id_proyecto = Conexion::conectar()->lastInsertId("proyectos");
             $proyectos = new ModeloProyecto();
-            $proyectos->mdlCrearProyectoIntegrante($id_proyecto, "proyectos_integrantes", $datos["integrantes"]);
+            if (sizeof($datos["integrantes"]) > 0){
+                $proyectos->mdlCrearProyectoIntegrante($id_proyecto, "proyectos_integrantes", $datos["integrantes"]);
+            }
 
             return "ok";
         } else {
